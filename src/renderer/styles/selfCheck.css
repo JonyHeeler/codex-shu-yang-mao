@@ -1,0 +1,108 @@
+.startup-shell {
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+  padding: 28px;
+}
+
+.startup-panel {
+  background: #ffffff;
+  border: 1px solid #dfe5ee;
+  border-radius: 8px;
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 28px;
+  width: 100%;
+}
+
+.startup-panel__header {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.startup-panel h1 {
+  font-size: 32px;
+  margin: 6px 0 0;
+}
+
+.startup-badge {
+  background: #fff1d6;
+  border-radius: 999px;
+  color: #8a5a00;
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+.startup-badge--pass {
+  background: #dff8ed;
+  color: #13784d;
+}
+
+.startup-checks {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.startup-check-row {
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #e5eaf1;
+  border-radius: 8px;
+  display: flex;
+  gap: 12px;
+  min-height: 72px;
+  padding: 14px;
+}
+
+.startup-check-row--pass svg {
+  color: #16a085;
+}
+
+.startup-check-row--fail svg {
+  color: #d64f6f;
+}
+
+.startup-check-row strong,
+.startup-check-row span {
+  display: block;
+}
+
+.startup-check-row span {
+  color: #687586;
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+}
+
+.startup-summary {
+  border-top: 1px solid #edf1f6;
+  display: grid;
+  gap: 8px 18px;
+  grid-template-columns: auto 1fr;
+  margin-top: 22px;
+  padding-top: 18px;
+}
+
+.startup-summary span {
+  color: #687586;
+}
+
+.startup-summary strong {
+  overflow-wrap: anywhere;
+}
+
+.startup-actions {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.startup-continue {
+  gap: 8px;
+  padding: 0 16px;
+  width: auto;
+}

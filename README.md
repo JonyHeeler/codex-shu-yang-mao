@@ -8,6 +8,7 @@ Codex Token Listener 是一个本地 Electron 桌面窗口，用来监听 Codex 
 - 统计最近 1 小时、最近 24 小时、最近 30 天的 token 消耗。
 - 展示当前会话累计 token、最近 token 事件和监听状态。
 - 只解析本地 `token_count` 元数据，不读取认证文件，也不展示 prompt 或回复正文。
+- 首次启动会自动自检 Codex 数据目录、session 文件和 `token_count` 事件。
 - 支持桌面烟测，自动启动窗口并生成截图。
 
 ## 安装
@@ -24,6 +25,10 @@ npm install
 ```
 
 ## 运行
+
+双击项目根目录里的 `Start Codex Token Listener.cmd` 即可启动。脚本会自动检查 Node/npm、安装依赖、构建桌面程序并打开窗口。
+
+也可以在终端中运行：
 
 ```powershell
 npm start
@@ -65,3 +70,9 @@ src/
 ## 常见问题
 
 如果界面显示未发现事件，请先确认 Codex Desktop 已经产生过至少一次 `token_count` 事件。可以在 Codex 中继续一次对话后点击刷新按钮。
+
+首次启动自检页会分别展示：
+
+- 是否找到 Codex 数据目录。
+- 是否找到 session 日志文件。
+- 是否找到 `token_count` 事件。

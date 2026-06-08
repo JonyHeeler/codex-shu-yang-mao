@@ -55,10 +55,33 @@ export interface RecentEventSnapshot {
   sourceName: string;
 }
 
+/** One startup self-check result shown before the dashboard opens. */
+export interface StartupCheckStep {
+  id: "codexHome" | "sessions" | "tokenCount";
+  label: string;
+  status: "pass" | "fail";
+  detail: string;
+}
+
+/** Startup diagnostics for local Codex data compatibility. */
+export interface StartupSelfCheckSnapshot {
+  checkedAtMs: number;
+  codexHome: string;
+  sessionsRoot: string;
+  codexHomeExists: boolean;
+  sessionsDirectoryExists: boolean;
+  sessionFileCount: number;
+  tokenCountFound: boolean;
+  tokenCountFileCount: number;
+  tokenCountEventCount: number;
+  steps: StartupCheckStep[];
+}
+
 /** Full snapshot sent from Electron main to the desktop UI. */
 export interface UsageSnapshot {
   generatedAtMs: number;
   codexHome: string;
+  selfCheck: StartupSelfCheckSnapshot | null;
   sourceStatus: "ready" | "missing" | "error";
   statusMessage: string;
   eventCount: number;

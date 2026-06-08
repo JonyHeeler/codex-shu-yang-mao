@@ -1,13 +1,28 @@
+import { useState } from "react";
 import { HeaderBar } from "@renderer/components/HeaderBar";
 import { QuotaPanel } from "@renderer/components/QuotaPanel";
 import { UsageGrid } from "@renderer/components/UsageGrid";
 import { EventTable } from "@renderer/components/EventTable";
 import { StatusRail } from "@renderer/components/StatusRail";
+import { StartupCheckPage } from "@renderer/components/StartupCheckPage";
 import { useUsageSnapshot } from "@renderer/hooks/useUsageSnapshot";
 
 /** Composes the complete Codex token listener desktop dashboard. */
 export const App = (): JSX.Element => {
+  const [showStartupCheck, setShowStartupCheck] = useState(true);
   const { snapshot, isRefreshing, error, refresh, openCodexHome } = useUsageSnapshot();
+
+  if (snapshot && showStartupCheck) {
+    return (
+      <StartupCheckPage
+        snapshot={snapshot}
+        isRefreshing={isRefreshing}
+        onContinue={() => setShowStartupCheck(false)}
+        onRefresh={refresh}
+        onOpenCodexHome={openCodexHome}
+      />
+    );
+  }
 
   return (
     <main className="app-shell">

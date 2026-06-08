@@ -1,5 +1,6 @@
 import type {
   RecentEventSnapshot,
+  StartupSelfCheckSnapshot,
   TokenEvent,
   TokenUsage,
   UsageSnapshot,
@@ -27,7 +28,11 @@ export class UsageAggregator {
   }
 
   /** Builds the complete renderer snapshot for the requested point in time. */
-  createSnapshot(codexHome: string, generatedAtMs: number): UsageSnapshot {
+  createSnapshot(
+    codexHome: string,
+    generatedAtMs: number,
+    selfCheck: StartupSelfCheckSnapshot | null
+  ): UsageSnapshot {
     this.dropOlderThan(generatedAtMs - 35 * 24 * 60 * 60 * 1000);
     const ordered = [...this.events.values()].sort((a, b) => b.timestampMs - a.timestampMs);
     const latest = ordered[0] ?? null;
@@ -36,6 +41,7 @@ export class UsageAggregator {
     return {
       generatedAtMs,
       codexHome,
+      selfCheck,
       sourceStatus: ordered.length > 0 ? "ready" : "missing",
       statusMessage: ordered.length > 0 ? "监听中" : "未发现 token_count 事件",
       eventCount: ordered.length,

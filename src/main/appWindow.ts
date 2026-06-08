@@ -45,18 +45,21 @@ export const captureSmokeScreenshot = async (
   await new Promise<void>((resolve) => {
     window.webContents.once("did-finish-load", () => resolve());
   });
-  await waitForLiveSnapshot(window);
+  await waitForRenderedApp(window);
   const image = await window.capturePage();
   mkdirSync(path.dirname(screenshotPath), { recursive: true });
   writeFileSync(screenshotPath, image.toPNG());
   app.quit();
 };
 
-const waitForLiveSnapshot = async (window: BrowserWindow): Promise<void> => {
+const waitForRenderedApp = async (window: BrowserWindow): Promise<void> => {
   const deadline = Date.now() + 9000;
   while (Date.now() < deadline) {
     const text = await window.webContents.executeJavaScript("document.body.innerText", true);
-    if (typeof text === "string" && text.includes("监听中")) {
+    if (
+      typeof text === "string" &&
+      (text.includes("首次启动自检") || text.includes("监听中"))
+    ) {
       return;
     }
 
