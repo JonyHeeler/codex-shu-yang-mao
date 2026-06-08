@@ -2,10 +2,10 @@
 setlocal
 
 cd /d "%~dp0"
-title Codex Token Listener
+title Codex 数羊毛
 
 echo.
-echo Codex Token Listener Quick Start
+echo Codex 数羊毛 Quick Start
 echo =================================
 
 where node >nul 2>nul

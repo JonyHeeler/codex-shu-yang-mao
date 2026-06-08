@@ -1,6 +1,7 @@
-# Codex Token Listener
+# Codex 数羊毛
 
-Codex Token Listener 是一个本地 Electron 桌面窗口，用来监听 Codex Desktop 写入的 `token_count` 事件，并展示账号额度与滚动 token 消耗。
+最近 Codex 的 bug 层出不穷，真是给我用爽了。所以我让 Codex 写了个小程序检测我薅了 OpenAI 多少羊毛。
+Codex 数羊毛是一个本地 Electron 桌面窗口，用来监听 Codex Desktop 写入的 `token_count` 事件，并展示账号额度与滚动 token 消耗。
 
 ## 功能
 
@@ -9,7 +10,6 @@ Codex Token Listener 是一个本地 Electron 桌面窗口，用来监听 Codex 
 - 展示当前会话累计 token、最近 token 事件和监听状态。
 - 只解析本地 `token_count` 元数据，不读取认证文件，也不展示 prompt 或回复正文。
 - 首次启动会自动自检 Codex 数据目录、session 文件和 `token_count` 事件。
-- 支持桌面烟测，自动启动窗口并生成截图。
 
 ## 安装
 
@@ -26,7 +26,7 @@ npm install
 
 ## 运行
 
-双击项目根目录里的 `Start Codex Token Listener.cmd` 即可启动。脚本会自动检查 Node/npm、安装依赖、构建桌面程序并打开窗口。
+双击项目根目录里的 `Start Codex 数羊毛.cmd` 即可启动。脚本会自动检查 Node/npm、安装依赖、构建桌面程序并打开窗口。
 
 也可以在终端中运行：
 
@@ -59,13 +59,6 @@ src/
 - 最近 1 小时、最近 24 小时、最近 30 天：按事件时间滚动统计 `last_token_usage.total_tokens`。
 - 当前账号额度：来自最新 `token_count` 事件里的 `rate_limits.primary.used_percent`，界面展示剩余百分比与重置时间。
 - 本地事件没有暴露绝对总额度 token 数，因此工具不伪造总额度，只展示 Codex 当前提供的百分比信号。
-
-## 开发规范
-
-- TypeScript 严格模式。
-- 主进程、渲染层、共享类型分层存放。
-- 导出的类、函数和组件保留 JSDoc 注释。
-- 单个源码文件控制在 200 行以内。
 
 ## 常见问题
 

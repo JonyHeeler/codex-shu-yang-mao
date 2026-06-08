@@ -27,7 +27,7 @@ export const HeaderBar = ({
       <div className="header-bar__title">
         <Database size={24} aria-hidden />
         <div>
-          <h1>Codex Token Listener</h1>
+          <h1>Codex 数羊毛</h1>
           <span>{isReady ? formatFreshness(snapshot.latestEventAtMs, now) : status}</span>
         </div>
       </div>

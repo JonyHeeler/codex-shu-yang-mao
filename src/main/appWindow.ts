@@ -21,7 +21,7 @@ export const createAppWindow = (): BrowserWindow => {
     minHeight: 640,
     show: screenshotPath === null,
     backgroundColor: "#f5f7fb",
-    title: "Codex Token Listener",
+    title: "Codex 数羊毛",
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
