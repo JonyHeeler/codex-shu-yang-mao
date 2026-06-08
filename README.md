@@ -1,6 +1,7 @@
-# Codex 数羊毛
+# 薅资本主义羊毛，挖山姆奥特曼墙脚
 
 最近 Codex 的 bug 层出不穷，真是给我用爽了。所以我让 Codex 写了个小程序检测我薅了 OpenAI 多少羊毛。
+
 Codex 数羊毛是一个本地 Electron 桌面窗口，用来监听 Codex Desktop 写入的 `token_count` 事件，并展示账号额度与滚动 token 消耗。
 
 ## 功能
