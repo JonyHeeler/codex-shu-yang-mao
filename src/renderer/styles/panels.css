@@ -1,0 +1,180 @@
+.status-pill {
+  border-radius: 999px;
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+.status-pill--live {
+  background: #dff8ed;
+  color: #13784d;
+}
+
+.status-pill--idle {
+  background: #fff1d6;
+  color: #8a5a00;
+}
+
+.quota-panel,
+.event-table,
+.status-rail,
+.loading-panel {
+  background: #ffffff;
+  border: 1px solid #dfe5ee;
+  border-radius: 8px;
+  min-width: 0;
+  padding: 18px;
+}
+
+.panel-heading,
+.section-title {
+  justify-content: space-between;
+}
+
+.panel-heading h2 {
+  font-size: 34px;
+  margin-top: 4px;
+}
+
+.quota-meter {
+  background: #edf2f7;
+  border-radius: 999px;
+  height: 12px;
+  margin: 18px 0 12px;
+  overflow: hidden;
+}
+
+.quota-meter div {
+  background: linear-gradient(90deg, #16a085, #2f80ed);
+  height: 100%;
+  min-width: 4px;
+}
+
+.quota-meta {
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.quota-windows {
+  grid-template-columns: 1fr 1fr;
+}
+
+.quota-window {
+  background: #f8fafc;
+  border: 1px solid #e5eaf1;
+  border-radius: 8px;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.quota-window strong,
+.rail-item strong {
+  display: block;
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.quota-window div:last-child {
+  color: #687586;
+  gap: 6px;
+}
+
+.metric-card {
+  background: #ffffff;
+  border: 1px solid #dfe5ee;
+  border-left-width: 4px;
+  border-radius: 8px;
+  min-height: 136px;
+  padding: 16px;
+}
+
+.metric-card--teal {
+  border-left-color: #16a085;
+}
+
+.metric-card--blue {
+  border-left-color: #2f80ed;
+}
+
+.metric-card--amber {
+  border-left-color: #d89400;
+}
+
+.metric-card--rose {
+  border-left-color: #d64f6f;
+}
+
+.metric-card__top {
+  justify-content: space-between;
+}
+
+.metric-card__icon,
+.rail-item__icon {
+  align-items: center;
+  background: #eef3f8;
+  border-radius: 8px;
+  display: inline-flex;
+  height: 34px;
+  justify-content: center;
+  width: 34px;
+}
+
+.metric-card strong {
+  display: block;
+  font-size: 27px;
+  margin-top: 18px;
+}
+
+.metric-card p {
+  color: #687586;
+  margin: 6px 0 0;
+}
+
+.table-shell {
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th,
+td {
+  border-bottom: 1px solid #edf1f6;
+  padding: 11px 8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  color: #687586;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+td {
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-rail {
+  align-self: start;
+  display: grid;
+  gap: 12px;
+}
+
+.rail-item {
+  background: #f8fafc;
+  border: 1px solid #e5eaf1;
+  border-radius: 8px;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px;
+}
+
+.rail-item strong {
+  overflow-wrap: anywhere;
+}

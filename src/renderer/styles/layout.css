@@ -1,0 +1,72 @@
+.app-shell {
+  min-height: 100vh;
+  padding: 22px;
+}
+
+.header-bar,
+.dashboard,
+.usage-grid,
+.quota-windows {
+  display: grid;
+  gap: 14px;
+}
+
+.header-bar {
+  align-items: center;
+  grid-template-columns: 1fr auto;
+  margin-bottom: 18px;
+}
+
+.header-bar__title,
+.header-bar__actions,
+.panel-heading,
+.metric-card__top,
+.section-title,
+.quota-meta,
+.quota-window,
+.rail-item {
+  align-items: center;
+  display: flex;
+}
+
+.header-bar__title {
+  gap: 12px;
+}
+
+.header-bar__actions {
+  gap: 10px;
+}
+
+.header-bar h1,
+.panel-heading h2,
+.section-title h2 {
+  margin: 0;
+}
+
+.header-bar h1 {
+  font-size: 24px;
+  font-weight: 750;
+}
+
+.header-bar span,
+.eyebrow,
+.section-title span,
+.quota-meta,
+.rail-item span {
+  color: #687586;
+  font-size: 13px;
+}
+
+.dashboard {
+  grid-template-columns: minmax(0, 1fr) 300px;
+}
+
+.dashboard__main {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.usage-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
